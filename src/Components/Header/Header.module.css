@@ -1,0 +1,47 @@
+.headerContainer {
+  position: fixed;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(67, 232, 149, 1);
+  top: 0;
+  color: rgb(255, 255, 255);
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 10px;
+}
+.wrapper div {
+  margin: 0px 5%;
+}
+.backBtn {
+  height: 26px;
+  width: 30px;
+  background-image: url('../../assets/ic_webBack@2x.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.appName {
+  font-size: 17px;
+  font-weight: 700;
+  align-self: center;
+}
+.mapIcon {
+  height: 30px;
+  width: 30px;
+  background-image: url('../../assets/icon_map@2x.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (min-width: 600px) {
+  .backBtn:hover, .mapIcon:hover {
+    cursor: pointer;
+  }
+}

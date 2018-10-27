@@ -1,0 +1,15 @@
+.MainContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+@media (min-width: 700px) {
+  .MainContainer {
+    max-width: 800px;
+    margin: 60px 0px 0px;
+  }
+}

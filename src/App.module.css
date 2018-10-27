@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+.loadContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 50%;
+}
+.spinner {
+  height: 50px;
+  width: 50px;
+  background-image: url('./assets/ic_webRefresh@2x.png');
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform-origin: 57% 50%;
+  animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+}
+.loadContainer p {
+  color: rgb(255, 255, 255);
+  margin: 20px 0px;
+}
+@keyframes spin {
+    0%  {transform: rotate(0deg);}
+    100% {transform: rotate(-360deg);}
+}
