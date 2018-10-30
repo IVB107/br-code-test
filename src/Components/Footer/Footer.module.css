@@ -7,4 +7,5 @@
   height: 50px;
   background-color: rgb(42, 42, 42);
   bottom: 0;
+  z-index: 3;
 }

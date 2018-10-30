@@ -8,6 +8,7 @@
   background-color: rgba(67, 232, 149, 1);
   top: 0;
   color: rgb(255, 255, 255);
+  z-index: 3;
 }
 .wrapper {
   display: flex;

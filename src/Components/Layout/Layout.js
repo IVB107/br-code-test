@@ -3,22 +3,20 @@ import Aux from '../../hoc/Aux'
 import styles from './Layout.module.css'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-// import SideDrawer from '../../Components/SideDrawer/SideDrawer'
 
 const layout = (props) => {
-  return (props.width < 600) ? (
+
+  // Check device width to display correct view
+  let footer = (props.width < 600) ? <Footer /> : null
+
+  return (
     <Aux >
       <div className={styles.MainContainer}>
-        <Header width={props.width} />
-        {props.children}
-        <Footer />
-      </div>
-    </Aux >
-  ) : (
-    <Aux >
-      <div className={styles.MainContainer}>
-        <Header />
-        {props.children}
+        <Header
+          toggleDrawer={props.toggleDrawer}
+          width={props.width} />
+          {props.children}
+        {footer}
       </div>
     </Aux >
   )
