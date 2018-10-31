@@ -3,9 +3,7 @@ import Info from '../../Components/Info/Info'
 import styles from './Drawer.module.css'
 
 class Drawer extends Component {
-
   render() {
-
     // Show proper drawer view
     const drawerView = (this.props.drawerView) ? styles.openDrawer : styles.closedDrawer
 
@@ -14,13 +12,12 @@ class Drawer extends Component {
       if (val && typeof val === 'object') removeEmpty(val)
       else if (val == null) obj[key] = undefined
     })
-
+    
     removeEmpty(this.props.current)
 
     let phone = (!this.props.current.contact || !this.props.current.contact.formattedPhone) ? "" : this.props.current.contact.formattedPhone
 
     let twitter = (!this.props.current.contact || !this.props.current.contact.twitter) ? "" : `@${this.props.current.contact.twitter}`
-    // console.log(this.props.current)
 
     return (
       <div className={drawerView}>

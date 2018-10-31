@@ -3,23 +3,17 @@ import Aux from '../../hoc/Aux'
 import styles from './Header.module.css'
 
 class Header extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     showButton: false
-  //   }
-  // }
-
   render () {
-
+    // Hide back button when Map is off-screen
     const backBtn = (this.props.backBtn) ? styles.showBtn : styles.hideBtn
+    const canClick = (this.props.backBtn) ? this.props.toggleDrawer : null
 
     return (
       <Aux >
         <div className={styles.headerContainer}>
           <div className={styles.wrapper}>
             <div
-              // onClick={this.props.handleGoBack}
+              onClick={canClick}
               className={backBtn}></div>
             <div className={styles.appName}>Lunch Tyme</div>
             <div

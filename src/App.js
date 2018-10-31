@@ -11,17 +11,10 @@ class App extends Component {
       data: {},
       isLoading: true,
       openDrawer: false,
-      selected: 8,
+      selected: 0,
       width: window.innerWidth
     }
   }
-
-  // TO DO:
-  // 1. Add functionality to arrow button on 'header' => close menu when open
-  // 2. Center/Align buttons & labels on 'footer'
-  // DONE - 3. Update menu details upon restaurant selection/clicked
-  // 4. Add media queries to change menu's style for wider viewports
-  // 5. Add markers to Menu Map for all restaurants in 'this.state.data'
 
   windowResize() {
     if (this.state.width !== window.innerWidth) {
@@ -62,12 +55,14 @@ class App extends Component {
     )
     if(!this.state.isLoading){
       feed = ( <Feed
+        isOpen={this.props.backBtn}
         feed={this.state.data.restaurants}
         clicked={(index) => this.handleSelection(index)}
         /> )
       let places = [...this.state.data.restaurants]
       let clicked = this.state.selected
       drawer = ( <Drawer
+        onBlur={this.props.toggleDrawer}
         drawerView={this.state.openDrawer}
         current={places[`${clicked}`]}
         />)
@@ -76,7 +71,6 @@ class App extends Component {
     return (
       <Layout
       backBtn={this.state.openDrawer}
-      isOpen={this.props.openDrawer}
       toggleDrawer={() => this.handleToggleDrawer()}
       width={this.state.width}>
         {feed}

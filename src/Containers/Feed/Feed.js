@@ -13,9 +13,7 @@ class Feed extends Component {
         latitude={restaurant.location.lat}
         longitude={restaurant.location.lng}
         clicked={() => this.props.clicked(index)}
-        // phone={restaurant.contact.formattedPhone}
-        // twitter={restaurant.contact.twitter}
-      />
+        isOpen={this.props.backBtn} />
     })
   }
 }

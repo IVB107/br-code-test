@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Lunch.module.css'
+import styles from '../../Footer/Footer.module.css'
 
 const lunch = (props) => (
   <div className={styles.btnContainer}>

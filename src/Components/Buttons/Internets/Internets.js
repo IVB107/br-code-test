@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Internets.module.css'
+import styles from '../../Footer/Footer.module.css'
 
 const internets = (props) => (
   <div className={styles.btnContainer}>

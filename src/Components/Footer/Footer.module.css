@@ -9,3 +9,34 @@
   bottom: 0;
   z-index: 3;
 }
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 10px;
+  width: 50px;
+  color: white;
+}
+.lunch, .internets {
+  height: 26px;
+  width: 26px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.lunch {
+  background-image: url('../../assets/tab_lunch@2x.png');
+}
+.internets {
+  background-image: url('../../assets/tab_internets@2x.png');
+}
+p {
+  margin: 0px;
+}
+@media (min-width: 600px) {
+  .btnContainer:hover {
+    cursor: pointer;
+  }
+}

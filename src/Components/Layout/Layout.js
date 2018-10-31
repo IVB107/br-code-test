@@ -5,18 +5,17 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
 const layout = (props) => {
-
-  // Check device width to display correct view
+  // Check device viewport for proper display
   let footer = (props.width < 600) ? <Footer /> : null
 
   return (
     <Aux >
       <div className={styles.MainContainer}>
         <Header
-        backBtn={props.backBtn}
+          backBtn={props.backBtn}
           toggleDrawer={props.toggleDrawer}
           width={props.width} />
-          {props.children}
+        {props.children}
         {footer}
       </div>
     </Aux >

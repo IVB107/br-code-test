@@ -50,7 +50,7 @@
   background-repeat: no-repeat;
 }
 @media (min-width: 600px) {
-  .backBtn:hover, .mapIcon:hover {
+  .showBtn:hover, .mapIcon:hover {
     cursor: pointer;
   }
 }
