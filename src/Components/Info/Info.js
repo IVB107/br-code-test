@@ -2,6 +2,7 @@ import React from 'react'
 import MapContainer from '../../hoc/MapContainer'
 import styles from './Info.module.css'
 
+// Display location map, details
 const info = (props) => (
   <div className={styles.infoContainer}>
     <div className={styles.wrapper}>

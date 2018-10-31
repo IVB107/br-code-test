@@ -1,7 +1,6 @@
 import React from 'react'
-import Aux from '../../hoc/Aux'
 import styles from './Layout.module.css'
-import Header from '../Header/Header'
+import Header from '../../Containers/Header/Header'
 import Footer from '../Footer/Footer'
 
 const layout = (props) => {
@@ -9,16 +8,14 @@ const layout = (props) => {
   let footer = (props.width < 600) ? <Footer /> : null
 
   return (
-    <Aux >
-      <div className={styles.MainContainer}>
-        <Header
-          backBtn={props.backBtn}
-          toggleDrawer={props.toggleDrawer}
-          width={props.width} />
-        {props.children}
-        {footer}
-      </div>
-    </Aux >
+    <div className={styles.MainContainer}>
+      <Header
+        backBtn={props.backBtn}
+        toggleDrawer={props.toggleDrawer}
+        width={props.width} />
+      {props.children}
+      {footer}
+    </div>
   )
 }
 

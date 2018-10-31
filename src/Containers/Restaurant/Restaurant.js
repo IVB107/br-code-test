@@ -6,7 +6,8 @@ class Restaurant extends Component {
     return (
       <div
         onClick={this.props.clicked}
-        className={styles.restContainer} style={{backgroundImage: `url(${this.props.image})`}} >
+        className={styles.restContainer}
+        style={{backgroundImage: `url(${this.props.image})`}} >
         <p className={styles.name}>{this.props.name}</p>
         <p className={styles.category}>{this.props.category}</p>
       </div>

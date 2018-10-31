@@ -7,30 +7,27 @@ export class MapContainer extends Component {
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},
-      selectedPlace: {},
     }
   }
-
+  // Display location name
   onMarkerClick = (props, marker, e) => {
     this.setState({
-      selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true
     })
   }
 
   render() {
-
-    const style = {
+    const containerSize = {
       width: '100%',
       height: '180px'
     }
-
+    // Show map & location marker
     return (
       <Map
         google={this.props.google}
-        style={style}
-        zoom={16}
+        style={containerSize}
+        zoom={15}
         center={{
           lat: this.props.lat,
           lng: this.props.lng

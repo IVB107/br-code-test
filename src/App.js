@@ -15,7 +15,7 @@ class App extends Component {
       width: window.innerWidth
     }
   }
-
+  // Initiate re-render upon window size change
   windowResize() {
     if (this.state.width !== window.innerWidth) {
       this.setState({ width: window.innerWidth })
@@ -33,19 +33,20 @@ class App extends Component {
     .then(results => results.json())
     .then(results => this.setState({ data: results, isLoading: false }))
   }
-
+  // Open/close map drawer
   handleToggleDrawer = () => {
     const drawer = this.state.openDrawer
     this.setState({openDrawer: !drawer})
   }
+  // Pass user's selection to state, then down to <Drawer />
   handleSelection = (index) => {
-    // Pass user's selection to state, then down to <Drawer />
     const clicked = index
     this.setState({selected: clicked})
     this.handleToggleDrawer()
   }
 
   render() {
+    // Show loading screen before/during initial render
     let drawer = null
     let feed = (
       <div className={styles.loadContainer} >
@@ -53,6 +54,7 @@ class App extends Component {
         <p>Searching for grub...</p>
       </div>
     )
+    // ...then, mount <Feed /> & <Drawer />
     if(!this.state.isLoading){
       feed = ( <Feed
         isOpen={this.props.backBtn}
@@ -60,9 +62,9 @@ class App extends Component {
         clicked={(index) => this.handleSelection(index)}
         /> )
       let places = [...this.state.data.restaurants]
+      // Tell Drawer which information to display
       let clicked = this.state.selected
       drawer = ( <Drawer
-        onBlur={this.props.toggleDrawer}
         drawerView={this.state.openDrawer}
         current={places[`${clicked}`]}
         />)
@@ -70,9 +72,9 @@ class App extends Component {
 
     return (
       <Layout
-      backBtn={this.state.openDrawer}
-      toggleDrawer={() => this.handleToggleDrawer()}
-      width={this.state.width}>
+        backBtn={this.state.openDrawer}
+        toggleDrawer={() => this.handleToggleDrawer()}
+        width={this.state.width} >
         {feed}
         {drawer}
       </Layout >
