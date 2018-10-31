@@ -11,7 +11,7 @@ class App extends Component {
       data: {},
       isLoading: true,
       openDrawer: false,
-      selected: 0,
+      selected: 8,
       width: window.innerWidth
     }
   }
@@ -19,8 +19,8 @@ class App extends Component {
   // TO DO:
   // 1. Add functionality to arrow button on 'header' => close menu when open
   // 2. Center/Align buttons & labels on 'footer'
-  // 3. Update menu details upon restaurant selection/clicked
-  // 4. Add media queries to change menu style on for wider viewports
+  // DONE - 3. Update menu details upon restaurant selection/clicked
+  // 4. Add media queries to change menu's style for wider viewports
   // 5. Add markers to Menu Map for all restaurants in 'this.state.data'
 
   windowResize() {
@@ -40,6 +40,7 @@ class App extends Component {
     .then(results => results.json())
     .then(results => this.setState({ data: results, isLoading: false }))
   }
+
   handleToggleDrawer = () => {
     const drawer = this.state.openDrawer
     this.setState({openDrawer: !drawer})
@@ -52,7 +53,7 @@ class App extends Component {
   }
 
   render() {
-    let drawer = null;
+    let drawer = null
     let feed = (
       <div className={styles.loadContainer} >
         <div className={styles.spinner} ></div>
@@ -74,6 +75,8 @@ class App extends Component {
 
     return (
       <Layout
+      backBtn={this.state.openDrawer}
+      isOpen={this.props.openDrawer}
       toggleDrawer={() => this.handleToggleDrawer()}
       width={this.state.width}>
         {feed}

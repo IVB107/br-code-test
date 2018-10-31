@@ -20,7 +20,15 @@
 .wrapper div {
   margin: 0px 5%;
 }
-.backBtn {
+.hideBtn {
+  height: 26px;
+  width: 30px;
+  background-image: none;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.showBtn {
   height: 26px;
   width: 30px;
   background-image: url('../../assets/ic_webBack@2x.png');

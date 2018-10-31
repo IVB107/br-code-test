@@ -6,7 +6,11 @@ const info = (props) => (
   <div className={styles.infoContainer}>
     <div className={styles.wrapper}>
       <div id="map" className={styles.mapContainer}>
-        <MapContainer lat={props.current.location.lat} lng={props.current.location.lng}/>
+        <MapContainer
+          current={props.current}
+          loc={props.current.location}
+          lat={props.current.location.lat}
+          lng={props.current.location.lng}/>
       </div>
       <div className={styles.nameContainer}>
         <p className={styles.name}>{props.current.name}</p>
@@ -17,8 +21,8 @@ const info = (props) => (
           <p>{props.current.location.address}</p>
           <p>{props.current.location.formattedAddress[1]}</p>
         </div>
-        <p className={styles.phone}>{props.current.contact.formattedPhone}</p>
-        <p className={styles.twitter}>{`@${props.current.contact.twitter}`}</p>
+        <p className={styles.phone}>{props.phone}</p>
+        <p className={styles.twitter}>{props.twitter}</p>
       </div>
     </div>
   </div>

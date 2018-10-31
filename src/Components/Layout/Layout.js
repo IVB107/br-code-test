@@ -13,6 +13,7 @@ const layout = (props) => {
     <Aux >
       <div className={styles.MainContainer}>
         <Header
+        backBtn={props.backBtn}
           toggleDrawer={props.toggleDrawer}
           width={props.width} />
           {props.children}
